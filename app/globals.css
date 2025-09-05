@@ -54,7 +54,7 @@
   }
   
   .bounty-card {
-    @apply glass-card p-6 rounded-lg hover:bg-opacity-90 transition-all duration-200 hover:shadow-card hover:border-accent hover:border-opacity-50 group;
+    @apply glass-card p-6 rounded-lg hover:bg-opacity-90 transition-all duration-200 hover:shadow-card hover:border-accent hover:border-opacity-50;
   }
   
   .status-active {

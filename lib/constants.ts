@@ -1,3 +1,5 @@
+import { Bounty, User } from './types';
+
 export const SKILLS = [
   // Languages
   { id: 'solidity', name: 'Solidity', category: 'language' },

@@ -111,7 +111,7 @@ export function LeaderboardSection() {
                     </p>
                     
                     <div className="flex flex-wrap justify-center gap-1">
-                      {user.skills.slice(0, 3).map((skill) => (
+                      {user.skills.slice(0, 3).map((skill: string) => (
                         <span
                           key={skill}
                           className="px-2 py-1 bg-primary bg-opacity-20 text-accent text-xs rounded-full"
@@ -167,7 +167,7 @@ export function LeaderboardSection() {
 
                     {/* Skills */}
                     <div className="hidden md:flex flex-wrap gap-1 max-w-xs">
-                      {user.skills.slice(0, 3).map((skill) => (
+                      {user.skills.slice(0, 3).map((skill: string) => (
                         <span
                           key={skill}
                           className="px-2 py-1 bg-primary bg-opacity-20 text-accent text-xs rounded-full"

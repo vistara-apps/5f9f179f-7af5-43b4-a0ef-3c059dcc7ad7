@@ -61,7 +61,7 @@ export function ContributorProfile({
         </div>
 
         <div className="flex flex-wrap gap-1">
-          {user.skills.slice(0, 3).map((skill) => (
+          {user.skills.slice(0, 3).map((skill: string) => (
             <SkillTag key={skill} skill={skill} />
           ))}
           {user.skills.length > 3 && (
