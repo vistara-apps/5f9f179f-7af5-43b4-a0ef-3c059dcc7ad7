@@ -81,6 +81,14 @@ export function BountiesSection() {
           <p className="text-xl text-text-secondary max-w-2xl mx-auto">
             Discover smart contract opportunities that match your skills and earn crypto rewards
           </p>
+          <div className="mt-6 p-4 bg-accent/10 border border-accent/20 rounded-lg max-w-2xl mx-auto">
+            <p className="text-accent font-medium">
+              🚀 New: X402 Payment Integration Demo
+            </p>
+            <p className="text-text-secondary text-sm mt-1">
+              Connect your wallet and try the USDC payment flow on Base network
+            </p>
+          </div>
         </div>
 
         {/* Filters and Controls */}
@@ -222,6 +230,8 @@ export function BountiesSection() {
               variant={bounty.status as any}
               onApply={handleApply}
               onViewDetails={handleViewDetails}
+              showPaymentButton={true}
+              paymentRecipient="0x742d35Cc6634C0532925a3b8D0Ac6d7d3f8b2Ae1"
             />
           ))}
         </div>
