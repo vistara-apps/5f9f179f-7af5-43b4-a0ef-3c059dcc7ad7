@@ -27,14 +27,20 @@ export function BountyCard({
   };
 
   return (
-    <div className="bounty-card">
+    <article className="bounty-card" role="article" aria-labelledby={`bounty-title-${bounty.bountyId}`}>
       <div className="flex justify-between items-start mb-4">
         <div className="flex-1">
           <div className="flex items-center gap-3 mb-2">
-            <h3 className="text-xl font-semibold text-text-primary group-hover:text-accent transition-colors duration-200">
+            <h3 
+              id={`bounty-title-${bounty.bountyId}`}
+              className="text-xl font-semibold text-text-primary group-hover:text-accent transition-colors duration-200"
+            >
               {bounty.title}
             </h3>
-            <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getStatusColor(bounty.status)}`}>
+            <span 
+              className={`px-2 py-1 rounded-full text-xs font-medium border ${getStatusColor(bounty.status)}`}
+              aria-label={`Status: ${bounty.status.replace('_', ' ')}`}
+            >
               {bounty.status.replace('_', ' ')}
             </span>
           </div>
@@ -89,7 +95,8 @@ export function BountyCard({
       <div className="flex gap-3">
         <button
           onClick={handleViewDetails}
-          className="btn-secondary flex-1"
+          className="btn-secondary flex-1 focus:outline-none focus:ring-2 focus:ring-accent"
+          aria-describedby={`bounty-title-${bounty.bountyId}`}
         >
           View Details
         </button>
@@ -97,7 +104,8 @@ export function BountyCard({
         {bounty.status === 'active' && (
           <button
             onClick={handleApply}
-            className="btn-primary flex-1"
+            className="btn-primary flex-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+            aria-describedby={`bounty-title-${bounty.bountyId}`}
           >
             Apply Now
           </button>

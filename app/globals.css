@@ -10,6 +10,7 @@
   body {
     @apply bg-bg text-text-primary;
     font-feature-settings: "rlig" 1, "calt" 1;
+    line-height: 1.6;
     background-image: 
       radial-gradient(circle at 20% 80%, hsla(192, 89%, 53%, 0.1) 0%, transparent 50%),
       radial-gradient(circle at 80% 20%, hsla(216, 84%, 47%, 0.1) 0%, transparent 50%),
@@ -18,6 +19,57 @@
   
   html {
     scroll-behavior: smooth;
+  }
+  
+  /* Improved typography hierarchy */
+  h1 {
+    @apply text-4xl md:text-6xl font-bold leading-tight;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl font-bold leading-tight;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl font-semibold leading-snug;
+  }
+  
+  h4 {
+    @apply text-lg md:text-xl font-semibold leading-snug;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+  
+  /* Better spacing for sections */
+  section {
+    @apply py-16 md:py-24;
+  }
+  
+  /* Mobile-friendly touch targets */
+  button, 
+  a[role="button"],
+  input[type="button"],
+  input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Touch-friendly interactive elements */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  /* Improved mobile spacing */
+  @media (max-width: 768px) {
+    .mobile-px {
+      @apply px-4;
+    }
+    
+    .mobile-py {
+      @apply py-6;
+    }
   }
 }
 
@@ -42,11 +94,22 @@
   }
   
   .btn-primary {
-    @apply bg-gradient-to-r from-primary to-accent text-white px-6 py-3 rounded-lg font-medium hover:from-blue-600 hover:to-cyan-400 transition-all duration-200 shadow-card hover:shadow-glow transform hover:scale-105;
+    @apply bg-gradient-to-r from-primary to-accent text-white px-6 py-3 rounded-lg font-medium hover:from-blue-600 hover:to-cyan-400 transition-all duration-300 shadow-card hover:shadow-glow transform hover:scale-105 active:scale-95;
   }
   
   .btn-secondary {
-    @apply glass-card text-text-primary px-6 py-3 rounded-lg font-medium hover:bg-opacity-100 hover:bg-surface transition-all duration-200 border-gray-600 hover:border-accent;
+    @apply glass-card text-text-primary px-6 py-3 rounded-lg font-medium hover:bg-opacity-100 hover:bg-surface transition-all duration-300 border-gray-600 hover:border-accent transform hover:scale-105 active:scale-95;
+  }
+  
+  /* Enhanced button states */
+  .btn-primary:disabled,
+  .btn-secondary:disabled {
+    @apply opacity-50 cursor-not-allowed transform-none;
+  }
+  
+  .btn-primary:focus,
+  .btn-secondary:focus {
+    @apply ring-2 ring-offset-2 ring-offset-bg;
   }
   
   .skill-tag {
@@ -77,5 +140,36 @@
   
   .animate-glow {
     animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  /* Screen reader only utility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  .focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+  
+  /* Improved focus styles */
+  .focus-visible\:ring-2:focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px hsl(192, 89%, 53%);
   }
 }

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { ConnectWalletButton } from '@/components/ui/ConnectWalletButton';
-import { Search, TrendingUp, Shield, Zap } from 'lucide-react';
+import { Search, TrendingUp, Shield, Zap, X } from 'lucide-react';
 
 export function HeroSection() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -49,29 +49,41 @@ export function HeroSection() {
 
         {/* Search Bar */}
         <div className="max-w-2xl mx-auto mb-8">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-text-secondary" />
+          <div className="relative group">
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-text-secondary group-focus-within:text-accent transition-colors duration-200" />
             <input
               type="text"
               placeholder="Search bounties by skill, category, or keyword..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 glass-card rounded-lg text-text-primary placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+              className="w-full pl-12 pr-4 py-4 glass-card rounded-lg text-text-primary placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 hover:bg-opacity-90"
+              aria-label="Search bounties"
             />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 p-1 hover:bg-surface rounded-full transition-colors duration-200"
+                aria-label="Clear search"
+              >
+                <X className="w-4 h-4 text-text-secondary" />
+              </button>
+            )}
           </div>
         </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-          <button className="btn-primary text-lg px-8 py-4">
+          <button className="btn-primary text-lg px-8 py-4 w-full sm:w-auto min-h-[48px] touch-manipulation">
             Browse Bounties
           </button>
           
-          <button className="btn-secondary text-lg px-8 py-4">
+          <button className="btn-secondary text-lg px-8 py-4 w-full sm:w-auto min-h-[48px] touch-manipulation">
             Post a Bounty
           </button>
           
-          <ConnectWalletButton />
+          <div className="w-full sm:w-auto">
+            <ConnectWalletButton />
+          </div>
         </div>
 
         {/* Animated Stats */}
