@@ -22,6 +22,7 @@ Your decentralized bounty hub on Base. Connect skilled contributors with smart c
 ## 🎨 Design System
 
 ### Colors
+
 - **Primary**: `hsl(216, 84%, 47%)` - Deep blue
 - **Accent**: `hsl(192, 89%, 53%)` - Cyan
 - **Background**: `hsl(220, 30%, 8%)` - Dark navy
@@ -30,6 +31,7 @@ Your decentralized bounty hub on Base. Connect skilled contributors with smart c
 - **Text Secondary**: `hsl(210, 50%, 75%)` - Medium gray
 
 ### Components
+
 - **BountyCard**: Display bounty information with status variants
 - **ContributorProfile**: Show user profiles with reputation scores
 - **SkillTag**: Interactive skill badges
@@ -39,21 +41,25 @@ Your decentralized bounty hub on Base. Connect skilled contributors with smart c
 ## 🚀 Getting Started
 
 1. **Install dependencies**:
+
    ```bash
    npm install
    ```
 
 2. **Set up environment variables**:
+
    ```bash
    cp .env.local.example .env.local
    ```
-   
+
    Add your OnchainKit API key:
+
    ```
    NEXT_PUBLIC_ONCHAINKIT_API_KEY=your_api_key_here
    ```
 
 3. **Run the development server**:
+
    ```bash
    npm run dev
    ```
@@ -66,18 +72,22 @@ Your decentralized bounty hub on Base. Connect skilled contributors with smart c
 This project includes automated CI/CD deployment to Vercel:
 
 ### Automatic Deployment
+
 - **Production**: Automatically deploys to Vercel on pushes to `main` branch
 - **Preview**: Creates preview deployments for all pull requests
 - **Status Updates**: Comments on PRs with deployment URLs
 
 ### Required Secrets
+
 Set these in your GitHub repository secrets:
+
 - `VERCEL_TOKEN` - Your Vercel authentication token
-- `VERCEL_ORG_ID` - Your Vercel organization ID  
+- `VERCEL_ORG_ID` - Your Vercel organization ID
 - `VERCEL_PROJECT_ID` - Your Vercel project ID
 - `NEXT_PUBLIC_ONCHAINKIT_API_KEY` - OnchainKit API key
 
 ### Manual Deployment
+
 ```bash
 # Install Vercel CLI
 npm install -g vercel@latest
@@ -126,18 +136,21 @@ This app is built as a Base Mini App with:
 ## 🎯 User Flows
 
 ### Bounty Seeker (Posting)
+
 1. Connect wallet
 2. Navigate to "Post Bounty"
 3. Fill bounty details and approve escrow
 4. Bounty goes live on the board
 
 ### Contributor (Applying)
+
 1. Browse bounties with AI-powered recommendations
 2. Apply with cover message and timeline
 3. Get selected by bounty issuer
 4. Complete work and receive automated payout
 
 ### Completion & Payout
+
 1. Submit proof of work
 2. Issuer reviews and approves
 3. Escrow automatically releases funds

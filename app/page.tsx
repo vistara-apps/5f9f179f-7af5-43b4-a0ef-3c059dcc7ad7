@@ -20,14 +20,14 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       <Header />
-      
+
       <main>
         <HeroSection />
         <FeaturesSection />
         <BountiesSection />
         <LeaderboardSection />
       </main>
-      
+
       <Footer />
     </div>
   );

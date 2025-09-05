@@ -67,11 +67,13 @@ vercel env add NEXT_PUBLIC_ONCHAINKIT_API_KEY
 ### 5. Deploy
 
 For preview deployment:
+
 ```bash
 vercel
 ```
 
 For production deployment:
+
 ```bash
 vercel --prod
 ```
@@ -80,9 +82,9 @@ vercel --prod
 
 The following environment variables are required for the application to function properly:
 
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `NEXT_PUBLIC_ONCHAINKIT_API_KEY` | OnchainKit API key for Base blockchain integration | Yes |
+| Variable                         | Description                                        | Required |
+| -------------------------------- | -------------------------------------------------- | -------- |
+| `NEXT_PUBLIC_ONCHAINKIT_API_KEY` | OnchainKit API key for Base blockchain integration | Yes      |
 
 ### Setting Environment Variables in Vercel
 

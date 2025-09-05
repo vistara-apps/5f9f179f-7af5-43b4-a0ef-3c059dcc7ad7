@@ -26,11 +26,17 @@ export function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 cyber-grid opacity-20" />
-      
+
       {/* Floating Elements */}
       <div className="absolute top-20 left-10 w-20 h-20 bg-primary bg-opacity-20 rounded-full animate-float" />
-      <div className="absolute top-40 right-20 w-16 h-16 bg-accent bg-opacity-20 rounded-full animate-float" style={{ animationDelay: '2s' }} />
-      <div className="absolute bottom-40 left-20 w-12 h-12 bg-purple-500 bg-opacity-20 rounded-full animate-float" style={{ animationDelay: '4s' }} />
+      <div
+        className="absolute top-40 right-20 w-16 h-16 bg-accent bg-opacity-20 rounded-full animate-float"
+        style={{ animationDelay: '2s' }}
+      />
+      <div
+        className="absolute bottom-40 left-20 w-12 h-12 bg-purple-500 bg-opacity-20 rounded-full animate-float"
+        style={{ animationDelay: '4s' }}
+      />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
         {/* Main Heading */}
@@ -40,9 +46,9 @@ export function HeroSection() {
             <br />
             <span className="text-text-primary">Earn Crypto</span>
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-            Your decentralized bounty hub on Base. Connect skilled contributors 
+            Your decentralized bounty hub on Base. Connect skilled contributors
             with smart contract opportunities and build the future of Web3.
           </p>
         </div>
@@ -66,11 +72,11 @@ export function HeroSection() {
           <button className="btn-primary text-lg px-8 py-4">
             Browse Bounties
           </button>
-          
+
           <button className="btn-secondary text-lg px-8 py-4">
             Post a Bounty
           </button>
-          
+
           <ConnectWalletButton />
         </div>
 
@@ -79,7 +85,7 @@ export function HeroSection() {
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             const isActive = index === currentStat;
-            
+
             return (
               <div
                 key={stat.label}
@@ -88,14 +94,14 @@ export function HeroSection() {
                 }`}
               >
                 <div className="flex items-center justify-center mb-3">
-                  <Icon className={`w-8 h-8 ${isActive ? 'text-accent' : 'text-primary'}`} />
+                  <Icon
+                    className={`w-8 h-8 ${isActive ? 'text-accent' : 'text-primary'}`}
+                  />
                 </div>
                 <div className="text-2xl font-bold text-text-primary mb-1">
                   {stat.value}
                 </div>
-                <div className="text-text-secondary">
-                  {stat.label}
-                </div>
+                <div className="text-text-secondary">{stat.label}</div>
               </div>
             );
           })}

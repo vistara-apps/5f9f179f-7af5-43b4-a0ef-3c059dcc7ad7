@@ -22,29 +22,30 @@ export function Footer() {
                 </p>
               </div>
             </div>
-            
+
             <p className="text-text-secondary mb-6 max-w-md">
-              Your decentralized bounty hub on Base. Connect skilled contributors 
-              with smart contract opportunities and build the future of Web3.
+              Your decentralized bounty hub on Base. Connect skilled
+              contributors with smart contract opportunities and build the
+              future of Web3.
             </p>
-            
+
             <div className="flex items-center gap-4">
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="p-2 hover:bg-surface rounded-lg transition-colors duration-200"
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5 text-text-secondary hover:text-accent" />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="p-2 hover:bg-surface rounded-lg transition-colors duration-200"
                 aria-label="Twitter"
               >
                 <Twitter className="w-5 h-5 text-text-secondary hover:text-accent" />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="p-2 hover:bg-surface rounded-lg transition-colors duration-200"
                 aria-label="Discord"
               >
@@ -58,22 +59,34 @@ export function Footer() {
             <h4 className="font-semibold text-text-primary mb-4">Platform</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-text-secondary hover:text-accent transition-colors duration-200">
+                <a
+                  href="#"
+                  className="text-text-secondary hover:text-accent transition-colors duration-200"
+                >
                   Browse Bounties
                 </a>
               </li>
               <li>
-                <a href="#" className="text-text-secondary hover:text-accent transition-colors duration-200">
+                <a
+                  href="#"
+                  className="text-text-secondary hover:text-accent transition-colors duration-200"
+                >
                   Post Bounty
                 </a>
               </li>
               <li>
-                <a href="#" className="text-text-secondary hover:text-accent transition-colors duration-200">
+                <a
+                  href="#"
+                  className="text-text-secondary hover:text-accent transition-colors duration-200"
+                >
                   Leaderboard
                 </a>
               </li>
               <li>
-                <a href="#" className="text-text-secondary hover:text-accent transition-colors duration-200">
+                <a
+                  href="#"
+                  className="text-text-secondary hover:text-accent transition-colors duration-200"
+                >
                   How it Works
                 </a>
               </li>
@@ -85,22 +98,34 @@ export function Footer() {
             <h4 className="font-semibold text-text-primary mb-4">Resources</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-text-secondary hover:text-accent transition-colors duration-200">
+                <a
+                  href="#"
+                  className="text-text-secondary hover:text-accent transition-colors duration-200"
+                >
                   Documentation
                 </a>
               </li>
               <li>
-                <a href="#" className="text-text-secondary hover:text-accent transition-colors duration-200">
+                <a
+                  href="#"
+                  className="text-text-secondary hover:text-accent transition-colors duration-200"
+                >
                   API Reference
                 </a>
               </li>
               <li>
-                <a href="#" className="text-text-secondary hover:text-accent transition-colors duration-200">
+                <a
+                  href="#"
+                  className="text-text-secondary hover:text-accent transition-colors duration-200"
+                >
                   Smart Contracts
                 </a>
               </li>
               <li>
-                <a href="#" className="text-text-secondary hover:text-accent transition-colors duration-200">
+                <a
+                  href="#"
+                  className="text-text-secondary hover:text-accent transition-colors duration-200"
+                >
                   Security
                 </a>
               </li>
@@ -112,12 +137,18 @@ export function Footer() {
           <p className="text-text-secondary text-sm">
             © 2024 BaseBounties. Built on Base Network.
           </p>
-          
+
           <div className="flex items-center gap-6 mt-4 md:mt-0">
-            <a href="#" className="text-text-secondary hover:text-accent text-sm transition-colors duration-200">
+            <a
+              href="#"
+              className="text-text-secondary hover:text-accent text-sm transition-colors duration-200"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="text-text-secondary hover:text-accent text-sm transition-colors duration-200">
+            <a
+              href="#"
+              className="text-text-secondary hover:text-accent text-sm transition-colors duration-200"
+            >
               Terms of Service
             </a>
           </div>
