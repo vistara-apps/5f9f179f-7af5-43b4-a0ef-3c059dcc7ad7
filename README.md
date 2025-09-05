@@ -61,6 +61,36 @@ Your decentralized bounty hub on Base. Connect skilled contributors with smart c
 4. **Open your browser**:
    Navigate to [http://localhost:3000](http://localhost:3000)
 
+## 🚀 Deployment
+
+This project includes automated CI/CD deployment to Vercel:
+
+### Automatic Deployment
+- **Production**: Automatically deploys to Vercel on pushes to `main` branch
+- **Preview**: Creates preview deployments for all pull requests
+- **Status Updates**: Comments on PRs with deployment URLs
+
+### Required Secrets
+Set these in your GitHub repository secrets:
+- `VERCEL_TOKEN` - Your Vercel authentication token
+- `VERCEL_ORG_ID` - Your Vercel organization ID  
+- `VERCEL_PROJECT_ID` - Your Vercel project ID
+- `NEXT_PUBLIC_ONCHAINKIT_API_KEY` - OnchainKit API key
+
+### Manual Deployment
+```bash
+# Install Vercel CLI
+npm install -g vercel@latest
+
+# Deploy to preview
+vercel
+
+# Deploy to production
+vercel --prod
+```
+
+📖 **For detailed deployment instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md)**
+
 ## 📱 Base Mini App Integration
 
 This app is built as a Base Mini App with:
