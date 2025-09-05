@@ -21,7 +21,7 @@ export default function HomePage() {
     <div className="min-h-screen">
       <Header />
       
-      <main>
+      <main id="main-content" role="main">
         <HeroSection />
         <FeaturesSection />
         <BountiesSection />

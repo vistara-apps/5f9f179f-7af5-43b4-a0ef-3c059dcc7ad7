@@ -49,6 +49,22 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
         },
+        shrink: {
+          '0%': { width: '100%' },
+          '100%': { width: '0%' },
+        },
+        slideInRight: {
+          '0%': { transform: 'translateX(100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        slideOutRight: {
+          '0%': { transform: 'translateX(0)', opacity: '1' },
+          '100%': { transform: 'translateX(100%)', opacity: '0' },
+        },
+        pulse: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.5' },
+        },
       },
     },
   },
