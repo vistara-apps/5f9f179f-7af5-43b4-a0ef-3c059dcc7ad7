@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "BaseBounties",
+    "subtitle": "Built with Zara",
+    "description": "BaseBounties is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://5f9f179f7af543b4a0ef3c059dcc7ad7-mxfd.vercel.app",
+    "splashImageUrl": "https://5f9f179f7af543b4a0ef3c059dcc7ad7-mxfd.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://5f9f179f7af543b4a0ef3c059dcc7ad7-mxfd.vercel.app/image.png",
+    "tagline": "BaseBounties",
+    "screenshotUrls": [
+      "https://5f9f179f7af543b4a0ef3c059dcc7ad7-mxfd.vercel.app/screenshot.png",
+      "https://5f9f179f7af543b4a0ef3c059dcc7ad7-mxfd.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://5f9f179f7af543b4a0ef3c059dcc7ad7-mxfd.vercel.app/api/webhook"
+  }
+}
