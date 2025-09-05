@@ -1,29 +1,41 @@
 'use client';
 
+import { useState } from 'react';
 import { Bounty } from '@/lib/types';
 import { formatEther, formatDate, getDifficultyColor, getStatusColor, getTimeAgo } from '@/lib/utils';
 import { SkillTag } from './SkillTag';
-import { Clock, DollarSign, Users, Calendar } from 'lucide-react';
+import { PaymentModal } from './PaymentModal';
+import { Clock, DollarSign, Users, Calendar, CreditCard } from 'lucide-react';
 
 interface BountyCardProps {
   bounty: Bounty;
   variant?: 'active' | 'completed' | 'awaiting_review';
   onApply?: (bountyId: string) => void;
   onViewDetails?: (bountyId: string) => void;
+  showPaymentButton?: boolean;
+  paymentRecipient?: string;
 }
 
 export function BountyCard({ 
   bounty, 
   variant = 'active', 
   onApply, 
-  onViewDetails 
+  onViewDetails,
+  showPaymentButton = false,
+  paymentRecipient = '0x742d35Cc6634C0532925a3b8D0Ac6d7d3f8b2Ae1' // Default recipient
 }: BountyCardProps) {
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+
   const handleApply = () => {
     onApply?.(bounty.bountyId);
   };
 
   const handleViewDetails = () => {
     onViewDetails?.(bounty.bountyId);
+  };
+
+  const handlePayment = () => {
+    setIsPaymentModalOpen(true);
   };
 
   return (
@@ -102,7 +114,28 @@ export function BountyCard({
             Apply Now
           </button>
         )}
+
+        {showPaymentButton && (
+          <button
+            onClick={handlePayment}
+            className="btn-primary flex items-center gap-2 px-4 py-2"
+            title="Pay with USDC via x402"
+          >
+            <CreditCard className="w-4 h-4" />
+            Pay
+          </button>
+        )}
       </div>
+
+      {/* Payment Modal */}
+      <PaymentModal
+        isOpen={isPaymentModalOpen}
+        onClose={() => setIsPaymentModalOpen(false)}
+        bountyTitle={bounty.title}
+        amount={bounty.rewardAmount}
+        recipient={paymentRecipient}
+        bountyId={bounty.bountyId}
+      />
     </div>
   );
 }
