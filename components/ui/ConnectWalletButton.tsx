@@ -8,7 +8,9 @@ interface ConnectWalletButtonProps {
   variant?: 'default' | 'compact';
 }
 
-export function ConnectWalletButton({ variant = 'default' }: ConnectWalletButtonProps) {
+export function ConnectWalletButton({
+  variant = 'default',
+}: ConnectWalletButtonProps) {
   const { isConnected } = useAccount();
 
   if (variant === 'compact') {

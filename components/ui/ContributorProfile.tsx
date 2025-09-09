@@ -11,10 +11,10 @@ interface ContributorProfileProps {
   showActions?: boolean;
 }
 
-export function ContributorProfile({ 
-  user, 
-  variant = 'basic', 
-  showActions = false 
+export function ContributorProfile({
+  user,
+  variant = 'basic',
+  showActions = false,
 }: ContributorProfileProps) {
   const getReputationColor = (score: number) => {
     if (score >= 90) return 'text-green-400';
@@ -37,7 +37,7 @@ export function ContributorProfile({
           <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold text-lg">
             {user.name?.charAt(0) || 'U'}
           </div>
-          
+
           <div className="flex-1">
             <h4 className="font-semibold text-text-primary">
               {user.name || 'Anonymous'}
@@ -46,11 +46,13 @@ export function ContributorProfile({
               {formatAddress(user.walletAddress)}
             </p>
           </div>
-          
+
           <div className="text-right">
             <div className="flex items-center gap-1">
               <Star className="w-4 h-4 text-yellow-400" />
-              <span className={`font-medium ${getReputationColor(user.reputationScore)}`}>
+              <span
+                className={`font-medium ${getReputationColor(user.reputationScore)}`}
+              >
                 {user.reputationScore}
               </span>
             </div>
@@ -61,7 +63,7 @@ export function ContributorProfile({
         </div>
 
         <div className="flex flex-wrap gap-1">
-          {user.skills.slice(0, 3).map((skill) => (
+          {user.skills.slice(0, 3).map((skill: string) => (
             <SkillTag key={skill} skill={skill} />
           ))}
           {user.skills.length > 3 && (
@@ -80,7 +82,7 @@ export function ContributorProfile({
         <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold text-xl">
           {user.name?.charAt(0) || 'U'}
         </div>
-        
+
         <div className="flex-1">
           <div className="flex items-center gap-3 mb-2">
             <h3 className="text-xl font-semibold text-text-primary">
@@ -88,29 +90,29 @@ export function ContributorProfile({
             </h3>
             <div className="flex items-center gap-1">
               <Star className="w-5 h-5 text-yellow-400" />
-              <span className={`font-medium ${getReputationColor(user.reputationScore)}`}>
+              <span
+                className={`font-medium ${getReputationColor(user.reputationScore)}`}
+              >
                 {user.reputationScore}
               </span>
             </div>
           </div>
-          
+
           <p className="text-text-secondary mb-2">
             {formatAddress(user.walletAddress)}
           </p>
-          
-          {user.bio && (
-            <p className="text-text-secondary mb-4">
-              {user.bio}
-            </p>
-          )}
-          
+
+          {user.bio && <p className="text-text-secondary mb-4">{user.bio}</p>}
+
           <div className="flex items-center gap-4 text-sm text-text-secondary">
             <div className="flex items-center gap-1">
               <Award className="w-4 h-4" />
               <span>{user.pastBounties.length} bounties completed</span>
             </div>
-            
-            <span className={`px-2 py-1 rounded-full text-xs font-medium ${getReputationColor(user.reputationScore)} bg-current bg-opacity-20`}>
+
+            <span
+              className={`px-2 py-1 rounded-full text-xs font-medium ${getReputationColor(user.reputationScore)} bg-current bg-opacity-20`}
+            >
               {getReputationLevel(user.reputationScore)}
             </span>
           </div>
@@ -139,7 +141,7 @@ export function ContributorProfile({
               GitHub
             </a>
           )}
-          
+
           {user.twitterUrl && (
             <a
               href={user.twitterUrl}
@@ -156,12 +158,8 @@ export function ContributorProfile({
 
       {showActions && (
         <div className="flex gap-3 mt-6">
-          <button className="btn-secondary flex-1">
-            View Profile
-          </button>
-          <button className="btn-primary flex-1">
-            Send Message
-          </button>
+          <button className="btn-secondary flex-1">View Profile</button>
+          <button className="btn-primary flex-1">Send Message</button>
         </div>
       )}
     </div>

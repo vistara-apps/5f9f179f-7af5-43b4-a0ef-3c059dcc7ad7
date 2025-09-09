@@ -7,9 +7,11 @@ import { Trophy, Medal, Award, TrendingUp } from 'lucide-react';
 
 export function LeaderboardSection() {
   const [timeframe, setTimeframe] = useState<'week' | 'month' | 'all'>('month');
-  
+
   // Sort users by reputation score for leaderboard
-  const sortedUsers = [...MOCK_USERS].sort((a, b) => b.reputationScore - a.reputationScore);
+  const sortedUsers = [...MOCK_USERS].sort(
+    (a, b) => b.reputationScore - a.reputationScore
+  );
 
   const getRankIcon = (rank: number) => {
     switch (rank) {
@@ -20,7 +22,11 @@ export function LeaderboardSection() {
       case 3:
         return <Award className="w-6 h-6 text-orange-400" />;
       default:
-        return <span className="w-6 h-6 flex items-center justify-center text-text-secondary font-bold">#{rank}</span>;
+        return (
+          <span className="w-6 h-6 flex items-center justify-center text-text-secondary font-bold">
+            #{rank}
+          </span>
+        );
     }
   };
 
@@ -46,7 +52,8 @@ export function LeaderboardSection() {
             Top Contributors
           </h2>
           <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-            Recognize the skilled developers and security experts leading the Base ecosystem
+            Recognize the skilled developers and security experts leading the
+            Base ecosystem
           </p>
         </div>
 
@@ -64,7 +71,9 @@ export function LeaderboardSection() {
                       : 'text-text-secondary hover:text-text-primary'
                   }`}
                 >
-                  {period === 'all' ? 'All Time' : `This ${period.charAt(0).toUpperCase() + period.slice(1)}`}
+                  {period === 'all'
+                    ? 'All Time'
+                    : `This ${period.charAt(0).toUpperCase() + period.slice(1)}`}
                 </button>
               ))}
             </div>
@@ -75,16 +84,20 @@ export function LeaderboardSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {sortedUsers.slice(0, 3).map((user, index) => {
             const rank = index + 1;
-            
+
             return (
               <div
                 key={user.userId}
                 className={`relative ${rank === 1 ? 'md:order-2 md:scale-110' : rank === 2 ? 'md:order-1' : 'md:order-3'}`}
               >
-                <div className={`glass-card p-6 rounded-lg ${getRankBadge(rank)} ${rank === 1 ? 'neon-border' : ''}`}>
+                <div
+                  className={`glass-card p-6 rounded-lg ${getRankBadge(rank)} ${rank === 1 ? 'neon-border' : ''}`}
+                >
                   {/* Rank Badge */}
                   <div className="flex justify-center mb-4">
-                    <div className={`w-16 h-16 rounded-full flex items-center justify-center ${getRankBadge(rank)}`}>
+                    <div
+                      className={`w-16 h-16 rounded-full flex items-center justify-center ${getRankBadge(rank)}`}
+                    >
                       {getRankIcon(rank)}
                     </div>
                   </div>
@@ -94,24 +107,24 @@ export function LeaderboardSection() {
                     <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
                       {user.name?.charAt(0) || 'U'}
                     </div>
-                    
+
                     <h3 className="text-xl font-semibold text-text-primary mb-2">
                       {user.name || 'Anonymous'}
                     </h3>
-                    
+
                     <div className="flex items-center justify-center gap-2 mb-3">
                       <TrendingUp className="w-5 h-5 text-accent" />
                       <span className="text-2xl font-bold text-accent">
                         {user.reputationScore}
                       </span>
                     </div>
-                    
+
                     <p className="text-text-secondary text-sm mb-4">
                       {user.pastBounties.length} bounties completed
                     </p>
-                    
+
                     <div className="flex flex-wrap justify-center gap-1">
-                      {user.skills.slice(0, 3).map((skill) => (
+                      {user.skills.slice(0, 3).map((skill: string) => (
                         <span
                           key={skill}
                           className="px-2 py-1 bg-primary bg-opacity-20 text-accent text-xs rounded-full"
@@ -134,11 +147,11 @@ export function LeaderboardSection() {
               Full Leaderboard
             </h3>
           </div>
-          
+
           <div className="divide-y divide-gray-700 divide-opacity-50">
             {sortedUsers.map((user, index) => {
               const rank = index + 1;
-              
+
               return (
                 <div
                   key={user.userId}
@@ -167,7 +180,7 @@ export function LeaderboardSection() {
 
                     {/* Skills */}
                     <div className="hidden md:flex flex-wrap gap-1 max-w-xs">
-                      {user.skills.slice(0, 3).map((skill) => (
+                      {user.skills.slice(0, 3).map((skill: string) => (
                         <span
                           key={skill}
                           className="px-2 py-1 bg-primary bg-opacity-20 text-accent text-xs rounded-full"
@@ -200,11 +213,10 @@ export function LeaderboardSection() {
               Want to Join the Leaderboard?
             </h3>
             <p className="text-text-secondary mb-6">
-              Start completing bounties and build your reputation in the Base ecosystem.
+              Start completing bounties and build your reputation in the Base
+              ecosystem.
             </p>
-            <button className="btn-primary">
-              Get Started
-            </button>
+            <button className="btn-primary">Get Started</button>
           </div>
         </div>
       </div>

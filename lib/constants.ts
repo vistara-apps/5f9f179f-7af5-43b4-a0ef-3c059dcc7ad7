@@ -1,3 +1,5 @@
+import { Bounty, User } from './types';
+
 export const SKILLS = [
   // Languages
   { id: 'solidity', name: 'Solidity', category: 'language' },
@@ -6,7 +8,7 @@ export const SKILLS = [
   { id: 'typescript', name: 'TypeScript', category: 'language' },
   { id: 'python', name: 'Python', category: 'language' },
   { id: 'go', name: 'Go', category: 'language' },
-  
+
   // Frameworks & Tools
   { id: 'hardhat', name: 'Hardhat', category: 'framework' },
   { id: 'foundry', name: 'Foundry', category: 'framework' },
@@ -15,7 +17,7 @@ export const SKILLS = [
   { id: 'wagmi', name: 'Wagmi', category: 'framework' },
   { id: 'ethers', name: 'Ethers.js', category: 'framework' },
   { id: 'web3js', name: 'Web3.js', category: 'framework' },
-  
+
   // Domains
   { id: 'defi', name: 'DeFi', category: 'domain' },
   { id: 'nft', name: 'NFT', category: 'domain' },
@@ -44,7 +46,8 @@ export const MOCK_BOUNTIES: Bounty[] = [
   {
     bountyId: '1',
     title: 'ERC-20 Token with Staking Mechanism',
-    description: 'Create a secure ERC-20 token with built-in staking rewards. Must include comprehensive tests and documentation.',
+    description:
+      'Create a secure ERC-20 token with built-in staking rewards. Must include comprehensive tests and documentation.',
     rewardAmount: '2.5',
     requiredSkills: ['solidity', 'hardhat', 'openzeppelin', 'security'],
     status: 'active',
@@ -58,7 +61,8 @@ export const MOCK_BOUNTIES: Bounty[] = [
   {
     bountyId: '2',
     title: 'DEX Liquidity Pool Security Audit',
-    description: 'Comprehensive security audit of a new DEX liquidity pool contract. Looking for experienced auditors.',
+    description:
+      'Comprehensive security audit of a new DEX liquidity pool contract. Looking for experienced auditors.',
     rewardAmount: '5.0',
     requiredSkills: ['solidity', 'security', 'defi'],
     status: 'active',
@@ -72,7 +76,8 @@ export const MOCK_BOUNTIES: Bounty[] = [
   {
     bountyId: '3',
     title: 'NFT Marketplace Frontend',
-    description: 'Build a modern NFT marketplace frontend with wallet integration and real-time updates.',
+    description:
+      'Build a modern NFT marketplace frontend with wallet integration and real-time updates.',
     rewardAmount: '3.0',
     requiredSkills: ['typescript', 'wagmi', 'nft'],
     status: 'completed',

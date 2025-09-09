@@ -4,7 +4,12 @@ import { useState } from 'react';
 import { BountyCard } from '@/components/ui/BountyCard';
 import { SkillTag } from '@/components/ui/SkillTag';
 import { Modal } from '@/components/ui/Modal';
-import { MOCK_BOUNTIES, SKILLS, BOUNTY_CATEGORIES, DIFFICULTY_LEVELS } from '@/lib/constants';
+import {
+  MOCK_BOUNTIES,
+  SKILLS,
+  BOUNTY_CATEGORIES,
+  DIFFICULTY_LEVELS,
+} from '@/lib/constants';
 import { Filter, SortAsc, Grid, List } from 'lucide-react';
 
 export function BountiesSection() {
@@ -12,23 +17,23 @@ export function BountiesSection() {
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>('all');
-  const [sortBy, setSortBy] = useState<'newest' | 'reward' | 'deadline'>('newest');
+  const [sortBy, setSortBy] = useState<'newest' | 'reward' | 'deadline'>(
+    'newest'
+  );
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showFilters, setShowFilters] = useState(false);
   const [selectedBounty, setSelectedBounty] = useState<string | null>(null);
   const [showApplicationModal, setShowApplicationModal] = useState(false);
 
   const toggleSkill = (skill: string) => {
-    setSelectedSkills(prev => 
-      prev.includes(skill) 
-        ? prev.filter(s => s !== skill)
-        : [...prev, skill]
+    setSelectedSkills((prev) =>
+      prev.includes(skill) ? prev.filter((s) => s !== skill) : [...prev, skill]
     );
   };
 
-  const filteredBounties = bounties.filter(bounty => {
+  const filteredBounties = bounties.filter((bounty) => {
     if (selectedSkills.length > 0) {
-      const hasMatchingSkill = selectedSkills.some(skill => 
+      const hasMatchingSkill = selectedSkills.some((skill) =>
         bounty.requiredSkills.includes(skill)
       );
       if (!hasMatchingSkill) return false;
@@ -38,7 +43,10 @@ export function BountiesSection() {
       return false;
     }
 
-    if (selectedDifficulty !== 'all' && bounty.difficulty !== selectedDifficulty) {
+    if (
+      selectedDifficulty !== 'all' &&
+      bounty.difficulty !== selectedDifficulty
+    ) {
       return false;
     }
 
@@ -79,7 +87,8 @@ export function BountiesSection() {
             Active Bounties
           </h2>
           <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-            Discover smart contract opportunities that match your skills and earn crypto rewards
+            Discover smart contract opportunities that match your skills and
+            earn crypto rewards
           </p>
         </div>
 
@@ -96,7 +105,9 @@ export function BountiesSection() {
             </button>
 
             {/* Desktop Filters */}
-            <div className={`flex-1 ${showFilters ? 'block' : 'hidden lg:block'}`}>
+            <div
+              className={`flex-1 ${showFilters ? 'block' : 'hidden lg:block'}`}
+            >
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {/* Category Filter */}
                 <div>
@@ -109,7 +120,7 @@ export function BountiesSection() {
                     className="w-full glass-card rounded-lg px-3 py-2 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent"
                   >
                     <option value="all">All Categories</option>
-                    {BOUNTY_CATEGORIES.map(category => (
+                    {BOUNTY_CATEGORIES.map((category) => (
                       <option key={category.id} value={category.id}>
                         {category.icon} {category.name}
                       </option>
@@ -128,7 +139,7 @@ export function BountiesSection() {
                     className="w-full glass-card rounded-lg px-3 py-2 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent"
                   >
                     <option value="all">All Levels</option>
-                    {DIFFICULTY_LEVELS.map(level => (
+                    {DIFFICULTY_LEVELS.map((level) => (
                       <option key={level.id} value={level.id}>
                         {level.name}
                       </option>
@@ -159,11 +170,15 @@ export function BountiesSection() {
                   Skills
                 </label>
                 <div className="flex flex-wrap gap-2">
-                  {SKILLS.slice(0, 12).map(skill => (
+                  {SKILLS.slice(0, 12).map((skill) => (
                     <SkillTag
                       key={skill.id}
                       skill={skill.name}
-                      variant={selectedSkills.includes(skill.id) ? 'selected' : 'default'}
+                      variant={
+                        selectedSkills.includes(skill.id)
+                          ? 'selected'
+                          : 'default'
+                      }
                       onClick={() => toggleSkill(skill.id)}
                     />
                   ))}
@@ -176,7 +191,9 @@ export function BountiesSection() {
               <button
                 onClick={() => setViewMode('grid')}
                 className={`p-2 rounded-lg transition-colors duration-200 ${
-                  viewMode === 'grid' ? 'bg-accent text-white' : 'text-text-secondary hover:bg-surface'
+                  viewMode === 'grid'
+                    ? 'bg-accent text-white'
+                    : 'text-text-secondary hover:bg-surface'
                 }`}
               >
                 <Grid className="w-5 h-5" />
@@ -184,7 +201,9 @@ export function BountiesSection() {
               <button
                 onClick={() => setViewMode('list')}
                 className={`p-2 rounded-lg transition-colors duration-200 ${
-                  viewMode === 'list' ? 'bg-accent text-white' : 'text-text-secondary hover:bg-surface'
+                  viewMode === 'list'
+                    ? 'bg-accent text-white'
+                    : 'text-text-secondary hover:bg-surface'
                 }`}
               >
                 <List className="w-5 h-5" />
@@ -198,7 +217,7 @@ export function BountiesSection() {
           <p className="text-text-secondary">
             Showing {sortedBounties.length} of {bounties.length} bounties
           </p>
-          
+
           {selectedSkills.length > 0 && (
             <button
               onClick={() => setSelectedSkills([])}
@@ -210,12 +229,14 @@ export function BountiesSection() {
         </div>
 
         {/* Bounties Grid */}
-        <div className={`grid gap-6 ${
-          viewMode === 'grid' 
-            ? 'grid-cols-1 lg:grid-cols-2 xl:grid-cols-3' 
-            : 'grid-cols-1'
-        }`}>
-          {sortedBounties.map(bounty => (
+        <div
+          className={`grid gap-6 ${
+            viewMode === 'grid'
+              ? 'grid-cols-1 lg:grid-cols-2 xl:grid-cols-3'
+              : 'grid-cols-1'
+          }`}
+        >
+          {sortedBounties.map((bounty) => (
             <BountyCard
               key={bounty.bountyId}
               bounty={bounty}
@@ -236,7 +257,8 @@ export function BountiesSection() {
               No bounties found
             </h3>
             <p className="text-text-secondary mb-4">
-              Try adjusting your filters or check back later for new opportunities
+              Try adjusting your filters or check back later for new
+              opportunities
             </p>
             <button
               onClick={() => {
@@ -259,9 +281,10 @@ export function BountiesSection() {
         >
           <div className="space-y-4">
             <p className="text-text-secondary">
-              Submit your application for this bounty. Make sure to highlight your relevant experience and proposed approach.
+              Submit your application for this bounty. Make sure to highlight
+              your relevant experience and proposed approach.
             </p>
-            
+
             <div>
               <label className="block text-sm font-medium text-text-primary mb-2">
                 Cover Message
@@ -272,7 +295,7 @@ export function BountiesSection() {
                 placeholder="Describe your experience and approach to this bounty..."
               />
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-text-primary mb-2">
                 Estimated Timeline
@@ -283,7 +306,7 @@ export function BountiesSection() {
                 placeholder="e.g., 2-3 weeks"
               />
             </div>
-            
+
             <div className="flex gap-3 pt-4">
               <button
                 onClick={() => setShowApplicationModal(false)}
@@ -291,9 +314,7 @@ export function BountiesSection() {
               >
                 Cancel
               </button>
-              <button className="btn-primary flex-1">
-                Submit Application
-              </button>
+              <button className="btn-primary flex-1">Submit Application</button>
             </div>
           </div>
         </Modal>

@@ -21,9 +21,7 @@ export function Header() {
               <Zap className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold gradient-text">
-                BaseBounties
-              </h1>
+              <h1 className="text-xl font-bold gradient-text">BaseBounties</h1>
               <p className="text-xs text-text-secondary hidden sm:block">
                 Ship Code, Earn Crypto
               </p>
@@ -32,13 +30,22 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            <a href="#bounties" className="text-text-secondary hover:text-accent transition-colors duration-200">
+            <a
+              href="#bounties"
+              className="text-text-secondary hover:text-accent transition-colors duration-200"
+            >
               Browse Bounties
             </a>
-            <a href="#create" className="text-text-secondary hover:text-accent transition-colors duration-200">
+            <a
+              href="#create"
+              className="text-text-secondary hover:text-accent transition-colors duration-200"
+            >
               Post Bounty
             </a>
-            <a href="#leaderboard" className="text-text-secondary hover:text-accent transition-colors duration-200">
+            <a
+              href="#leaderboard"
+              className="text-text-secondary hover:text-accent transition-colors duration-200"
+            >
               Leaderboard
             </a>
           </nav>
@@ -72,28 +79,28 @@ export function Header() {
         {isMobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-700 border-opacity-50">
             <nav className="flex flex-col gap-4">
-              <a 
-                href="#bounties" 
+              <a
+                href="#bounties"
                 className="text-text-secondary hover:text-accent transition-colors duration-200 py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Browse Bounties
               </a>
-              <a 
-                href="#create" 
+              <a
+                href="#create"
                 className="text-text-secondary hover:text-accent transition-colors duration-200 py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Post Bounty
               </a>
-              <a 
-                href="#leaderboard" 
+              <a
+                href="#leaderboard"
                 className="text-text-secondary hover:text-accent transition-colors duration-200 py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Leaderboard
               </a>
-              
+
               <div className="flex flex-col gap-3 pt-4 border-t border-gray-700 border-opacity-50">
                 <button className="btn-secondary flex items-center justify-center gap-2">
                   <Plus className="w-4 h-4" />

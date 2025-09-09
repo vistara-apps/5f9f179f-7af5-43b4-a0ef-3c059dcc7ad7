@@ -19,26 +19,26 @@ module.exports = {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
-        'sm': '4px',
-        'md': '8px',
-        'lg': '12px',
+        sm: '4px',
+        md: '8px',
+        lg: '12px',
       },
       spacing: {
-        'xs': '4px',
-        'sm': '8px',
-        'md': '16px',
-        'lg': '24px',
-        'xl': '32px',
+        xs: '4px',
+        sm: '8px',
+        md: '16px',
+        lg: '24px',
+        xl: '32px',
       },
       boxShadow: {
-        'card': '0 4px 12px hsla(216, 84%, 47%, 0.2)',
-        'glow': '0 0 20px hsla(192, 89%, 53%, 0.3)',
-        'neon': '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor',
+        card: '0 4px 12px hsla(216, 84%, 47%, 0.2)',
+        glow: '0 0 20px hsla(192, 89%, 53%, 0.3)',
+        neon: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor',
       },
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'float': 'float 6s ease-in-out infinite',
+        glow: 'glow 2s ease-in-out infinite alternate',
+        float: 'float 6s ease-in-out infinite',
       },
       keyframes: {
         glow: {
@@ -53,4 +53,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};
